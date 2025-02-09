@@ -4,6 +4,7 @@
     )
 }}
 select 
+{{ dbt_utils.generate_surrogate_key(['o.orderid','c.customerid','p.productid'])}} as surrogate_key,
 -- from raw order
 o.orderid,
 o.orderdate,
